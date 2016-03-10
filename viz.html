@@ -1,0 +1,564 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Viz</title>
+<link href="viz.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+body {
+	background-image: url();
+	background-repeat: no-repeat;
+}
+
+</style>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+<script src="jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jQueryAssets/jquery.ui-1.10.4.button.min.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+<img src="amalgamation_black_smallpng.png" alt="" width="10000" height="9522" usemap="#Map"/>
+<map name="Map">
+  <area onclick="playJust()" shape="rect" coords="110,9336,718,9471">
+  <area onclick="playSelf()" shape="rect" coords="108,9098,716,9233">
+  <area onclick="playWant()" shape="rect" coords="111,8860,719,8995">
+  <area onclick="playMars()" shape="rect" coords="110,8622,718,8757">
+  <area onclick="playMedit()" shape="rect" coords="110,8385,718,8520">
+  <area onclick="playLovsup2()" shape="rect" coords="110,8146,718,8281">
+  <area onclick="playLovsup3()" shape="rect" coords="112,7907,720,8042">
+  <area onclick="playBraz()" shape="rect" coords="109,7670,717,7805">
+  <area onclick="playWelc()" shape="rect" coords="112,7431,720,7566">
+  <area onclick="playHarmo()" shape="rect" coords="111,7192,719,7327">
+  <area onclick="playLady()" shape="rect" coords="111,6956,719,7091">
+  <area onclick="playVigil()" shape="rect" coords="111,6716,719,6851">
+  <area onclick="playAscent()" shape="rect" coords="109,6479,717,6614">
+  <area onclick="playDusk()" shape="rect" coords="109,6242,717,6377">
+  <area onclick="playBye()" shape="rect" coords="110,6002,718,6137">
+  <area onclick="playAiregin()" shape="rect" coords="109,5765,717,5900">
+  <area onclick="playAfroblue()" shape="rect" coords="110,5526,718,5661">
+  <area onclick="playMrday()" shape="rect" coords="110,5288,718,5423">
+  <area onclick="playAftcres()" shape="rect" coords="109,5051,717,5186">
+  <area onclick="playImpress()" shape="rect" coords="110,4811,718,4946">
+  <area onclick="playJupiter()" shape="rect" coords="110,4575,718,4710">
+  <area onclick="playManif()" shape="rect" coords="111,4337,719,4472">
+  <area onclick="playTwenty()" shape="rect" coords="109,4099,717,4234">
+  <area onclick="playTunji()" shape="rect" coords="108,3861,716,3996">
+  <area onclick="playLiving()" shape="rect" coords="110,3623,718,3758">
+  <area onclick="playBignick()" shape="rect" coords="110,3385,718,3520">
+  <area onclick="playLeo()" shape="rect" coords="109,3146,717,3281">
+  <area onclick="playGrand()" shape="rect" coords="110,2909,718,3044">
+  <area onclick="playMyone()" shape="rect" coords="110,2669,718,2804">
+  <area onclick="playVenus()" shape="rect" coords="110,2432,718,2567">
+  <area onclick="playVilia()" shape="rect" coords="109,2193,717,2328">
+  <area onclick="playTrans()" shape="rect" coords="110,1957,718,2092">
+  <area onclick="playLament()" shape="rect" coords="110,1717,718,1852">
+  <area onclick="playAfrica()" shape="rect" coords="110,1479,718,1614">
+  <area onclick="playSonny()" shape="rect" coords="111,1241,719,1376">
+  <area onclick="playEvolution()" shape="rect" coords="109,1004,717,1139">
+  <area onclick="playAllor()" shape="rect" coords="109,767,717,902">
+  <area onclick="playRain()" shape="rect" coords="110,529,718,664">
+  <area onclick="playBechet()" shape="rect" coords="109,290,717,425">
+  <area onclick="playAlabama()" shape="rect" coords="109,53,716,185" >
+</map>
+
+<audio class="song" id="alabama" src="mp3s/John Coltrane - Alabama.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="bechet" src="mp3s/coltrane blues to Bechet.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="rain" src="mp3s/07 - After The Rain.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="allor" src="mp3s/John Coltrane - All Or Nothing At All.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="evolution" src="mp3s/John Coltrane - Evolution 4-4.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="sonny" src="mp3s/John Coltrane - Like Sonny.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="africa" src="mp3s/John Coltrane - Africa 1-2.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="lament" src="mp3s/John Coltrane - Lonnie's Lament.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="trans" src="mp3s/John Coltrane - Transition.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="vilia" src="mp3s/John Coltrane Quartet - Vilia.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="venus" src="mp3s/John Coltrane - Venus (1967).mp3" type="audio/mpeg"></audio>
+<audio class="song" id="myone" src="mp3s/01 - My One And Only Love.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="grand" src="mp3s/John Coltrane and Cannonball Adderly-Grand Central.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="leo" src="mp3s/John Coltrane - Interstellar Space - 02_Leo.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="bignick" src="mp3s/John Coltrane - Big Nick.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="living" src="mp3s/John Coltrane - Living Space.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="tunji" src="mp3s/John Coltrane - Tunji.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="twenty" src="mp3s/John Coltrane - 26-2.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="manif" src="mp3s/John Coltrane Quintet - Manifestation (Cosmic Music, 1966).mp3" type="audio/mpeg"></audio>
+<audio class="song" id="jupiter" src="mp3s/John Coltrane - Interstellar Space - 05_Jupiter.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="impress" src="mp3s/02 - Impressions.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="aftcres" src="mp3s/After The Crescent.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="mrday" src="mp3s/John Coltrane - 'Mr. Day'.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="afroblue" src="mp3s/04 - Afro Blue.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="airegin" src="mp3s/Miles Davis - Airegin..mp3" type="audio/mpeg"></audio>
+<audio class="song" id="bye" src="mp3s/Miles Davis - Bye Bye Blackbird.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="dusk" src="mp3s/Coltrane Dusk dawn.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="ascent" src="mp3s/John Coltrane - Ascent.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="vigil" src="mp3s/John Coltrane - Vigil.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="lady" src="mp3s/John Coltrane - Your Lady.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="harmo" src="mp3s/JOHN COLTRANE- HARMONIQUE 1959.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="welc" src="mp3s/John Coltrane - Welcome.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="braz" src="mp3s/John Coltrane - Brasilia (Untitled Original).mp3" type="audio/mpeg"></audio>
+<audio class="song" id="lovsup3" src="mp3s/A Love Supreme, Pt. 3 - Pursuance.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="lovsup2" src="mp3s/A Love Supreme, Pt. 2 - Resolution.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="medit" src="mp3s/John Coltrane - Compassion.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="mars" src="mp3s/John Coltrane - Interstellar Space - 01_Mars.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="want" src="mp3s/01 - I Want To Talk About You.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="self" src="mp3s/John Coltrane - Selflessness.mp3" type="audio/mpeg"></audio>
+<audio class="song" id="just" src="mp3s/Just For The Love.mp3" type="audio/mpeg"></audio>
+
+
+<script>
+var alabama = document.getElementById("alabama"); 
+var bechet = document.getElementById("bechet");
+var rain = document.getElementById("rain");
+var allor = document.getElementById("allor");
+var evolution = document.getElementById("evolution");
+var sonny = document.getElementById("sonny");
+var africa = document.getElementById("africa");
+var lament = document.getElementById("lament");
+var trans = document.getElementById("trans");
+var vilia = document.getElementById("vilia");
+var venus = document.getElementById("venus"); 
+var myone = document.getElementById("myone");
+var grand = document.getElementById("grand");
+var leo = document.getElementById("leo");
+var bignick = document.getElementById("bignick");
+var living = document.getElementById("living");
+var tunji = document.getElementById("tunji");
+var twenty = document.getElementById("twenty");
+var manif = document.getElementById("manif");
+var jupiter = document.getElementById("jupiter"); 
+var impress = document.getElementById("impress");
+var aftcres = document.getElementById("aftcres");
+var mrday = document.getElementById("mrday");
+var afroblue = document.getElementById("afroblue");
+var airegin = document.getElementById("airegin");
+var bye = document.getElementById("bye");
+var dusk = document.getElementById("dusk");
+var ascent = document.getElementById("ascent");
+var vigil = document.getElementById("vigil");
+var lady = document.getElementById("lady"); 
+var harmo = document.getElementById("harmo");
+var welc = document.getElementById("welc");
+var braz = document.getElementById("braz");
+var lovsup3 = document.getElementById("lovsup3");
+var lovsup2 = document.getElementById("lovsup2");
+var medit = document.getElementById("medit");
+var mars = document.getElementById("mars");
+var want = document.getElementById("want");
+var self = document.getElementById("self");
+var just = document.getElementById("just");
+
+function stopAll() {
+    var song = document.getElementsByClassName('song'),
+        i = song.length;
+
+    while (i--) {
+        song[i].pause();
+		song[i].currentTime = 0
+    }
+}
+
+function playAlabama() {
+    if (alabama.paused) {
+		stopAll();
+        alabama.play();
+    }else{
+        alabama.pause();
+        alabama.currentTime = 0
+    }
+}
+
+function playBechet() {
+    if (bechet.paused) {
+		stopAll();
+        bechet.play();
+    }else{
+        bechet.pause();
+        bechet.currentTime = 0
+    }
+}
+
+function playRain() {
+    if (rain.paused) {
+		stopAll();
+        rain.play();
+    }else{
+        rain.pause();
+        rain.currentTime = 0
+    }
+}
+
+function playAllor() {
+    if (allor.paused) {
+		stopAll();
+        allor.play();
+    }else{
+        allor.pause();
+        allor.currentTime = 0
+    }
+}
+
+function playEvolution() {
+    if (evolution.paused) {
+		stopAll();
+        evolution.play();
+    }else{
+        evolution.pause();
+        evolution.currentTime = 0
+    }
+}
+
+function playSonny() {
+    if (sonny.paused) {
+		stopAll();
+        sonny.play();
+    }else{
+        sonny.pause();
+        sonny.currentTime = 0
+    }
+}
+
+function playAfrica() {
+    if (africa.paused) {
+		stopAll();
+        africa.play();
+    }else{
+        africa.pause();
+        africa.currentTime = 0
+    }
+}
+
+function playLament() {
+    if (lament.paused) {
+		stopAll();
+        lament.play();
+    }else{
+        lament.pause();
+        lament.currentTime = 0
+    }
+}
+
+function playTrans() {
+    if (trans.paused) {
+		stopAll();
+        trans.play();
+    }else{
+        trans.pause();
+        trans.currentTime = 0
+    }
+}
+
+function playVilia() {
+    if (vilia.paused) {
+		stopAll();
+        vilia.play();
+    }else{
+        vilia.pause();
+        vilia.currentTime = 0
+    }
+}
+
+function playVenus() {
+    if (venus.paused) {
+		stopAll();
+        venus.play();
+    }else{
+        venus.pause();
+        venus.currentTime = 0
+    }
+}
+
+function playMyone() {
+    if (myone.paused) {
+		stopAll();
+        myone.play();
+    }else{
+        myone.pause();
+        myone.currentTime = 0
+    }
+}
+
+function playGrand() {
+    if (grand.paused) {
+		stopAll();
+        grand.play();
+    }else{
+        grand.pause();
+        grand.currentTime = 0
+    }
+}
+
+function playLeo() {
+    if (leo.paused) {
+		stopAll();
+        leo.play();
+    }else{
+        leo.pause();
+        leo.currentTime = 0
+    }
+}
+
+function playBignick() {
+    if (bignick.paused) {
+		stopAll();
+        bignick.play();
+    }else{
+        bignick.pause();
+        bignick.currentTime = 0
+    }
+}
+
+function playLiving() {
+    if (living.paused) {
+		stopAll();
+        living.play();
+    }else{
+        living.pause();
+        living.currentTime = 0
+    }
+}
+
+function playTunji() {
+    if (tunji.paused) {
+		stopAll();
+        tunji.play();
+    }else{
+        tunji.pause();
+        tunji.currentTime = 0
+    }
+}
+
+function playTwenty() {
+    if (twenty.paused) {
+		stopAll();
+        twenty.play();
+    }else{
+        twenty.pause();
+        twenty.currentTime = 0
+    }
+}
+
+function playManif() {
+    if (manif.paused) {
+		stopAll();
+        manif.play();
+    }else{
+        manif.pause();
+        manif.currentTime = 0
+    }
+}
+
+function playJupiter() {
+    if (jupiter.paused) {
+		stopAll();
+        jupiter.play();
+    }else{
+        jupiter.pause();
+        jupiter.currentTime = 0
+    }
+}
+
+function playImpress() {
+    if (impress.paused) {
+		stopAll();
+        impress.play();
+    }else{
+        impress.pause();
+        impress.currentTime = 0
+    }
+}
+
+function playAftcres() {
+    if (aftcres.paused) {
+		stopAll();
+        aftcres.play();
+    }else{
+        aftcres.pause();
+        aftcres.currentTime = 0
+    }
+}
+
+function playMrday() {
+    if (mrday.paused) {
+		stopAll();
+        mrday.play();
+    }else{
+        mrday.pause();
+        mrday.currentTime = 0
+    }
+}
+
+function playAfroblue() {
+    if (afroblue.paused) {
+		stopAll();
+        afroblue.play();
+    }else{
+        afroblue.pause();
+        afroblue.currentTime = 0
+    }
+}
+
+function playAiregin() {
+    if (airegin.paused) {
+		stopAll();
+        airegin.play();
+    }else{
+        airegin.pause();
+        airegin.currentTime = 0
+    }
+}
+
+function playBye() {
+    if (bye.paused) {
+		stopAll();
+        bye.play();
+    }else{
+        bye.pause();
+        bye.currentTime = 0
+    }
+}
+
+function playDusk() {
+    if (dusk.paused) {
+		stopAll();
+        dusk.play();
+    }else{
+        dusk.pause();
+        dusk.currentTime = 0
+    }
+}
+
+function playAscent() {
+    if (ascent.paused) {
+		stopAll();
+        ascent.play();
+    }else{
+        ascent.pause();
+        ascent.currentTime = 0
+    }
+}
+
+function playVigil() {
+    if (vigil.paused) {
+		stopAll();
+        vigil.play();
+    }else{
+        vigil.pause();
+        vigil.currentTime = 0
+    }
+}
+
+function playLady() {
+    if (lady.paused) {
+		stopAll();
+        lady.play();
+    }else{
+        lady.pause();
+        lady.currentTime = 0
+    }
+}
+
+function playHarmo() {
+    if (harmo.paused) {
+		stopAll();
+        harmo.play();
+    }else{
+        harmo.pause();
+        harmo.currentTime = 0
+    }
+}
+
+function playWelc() {
+    if (welc.paused) {
+		stopAll();
+        welc.play();
+    }else{
+        welc.pause();
+        welc.currentTime = 0
+    }
+}
+
+function playBraz() {
+    if (braz.paused) {
+		stopAll();
+        braz.play();
+    }else{
+        braz.pause();
+        braz.currentTime = 0
+    }
+}
+
+function playLovsup3() {
+    if (lovsup3.paused) {
+		stopAll();
+        lovsup3.play();
+    }else{
+        lovsup3.pause();
+        lovsup3.currentTime = 0
+    }
+}
+
+function playLovsup2() {
+    if (lovsup2.paused) {
+		stopAll();
+        lovsup2.play();
+    }else{
+        lovsup2.pause();
+        lovsup2.currentTime = 0
+    }
+}
+
+function playMedit() {
+    if (medit.paused) {
+		stopAll();
+        medit.play();
+    }else{
+        medit.pause();
+        medit.currentTime = 0
+    }
+}
+
+function playMars() {
+    if (mars.paused) {
+		stopAll();
+        mars.play();
+    }else{
+        mars.pause();
+        mars.currentTime = 0
+    }
+}
+
+function playWant() {
+    if (want.paused) {
+		stopAll();
+        want.play();
+    }else{
+        want.pause();
+        want.currentTime = 0
+    }
+}
+
+function playSelf() {
+    if (self.paused) {
+		stopAll();
+        self.play();
+    }else{
+        self.pause();
+        self.currentTime = 0
+    }
+}
+
+function playJust() {
+    if (just.paused) {
+		stopAll();
+        just.play();
+    }else{
+        just.pause();
+        just.currentTime = 0
+    }
+}
+
+</script>
+</body>
+</html>
